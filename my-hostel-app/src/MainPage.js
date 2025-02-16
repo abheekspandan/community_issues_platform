@@ -18,7 +18,7 @@ const MainPage = () => {
   useEffect(() => {
     const fetchIssues = async () => {
       try {
-        const response = await axios.get('https://community-issues-platform-1.onrender.com/issues');
+        const response = await axios.get('https://community-issues-platform.onrender.com/issues');
         setIssues(response.data);
       } catch (error) {
         console.error('Error fetching issues:', error);
@@ -31,7 +31,7 @@ const MainPage = () => {
     const fetchVotedIssues = async () => {
       if (user && user.id) {
         try {
-          const response = await axios.get(`https://community-issues-platform-1.onrender.com/votes/${user.id}`);
+          const response = await axios.get(`https://community-issues-platform.onrender.com/votes/${user.id}`);
           setVotedIssues(response.data.map(issue => issue.id));
         } catch (error) {
           console.error('Error fetching voted issues:', error);
@@ -50,7 +50,7 @@ const MainPage = () => {
     }
   
     try {
-      const response = await axios.post(`https://community-issues-platform-1.onrender.com/vote/${issueId}`, { userId: user.id });
+      const response = await axios.post(`https://community-issues-platform.onrender.com/vote/${issueId}`, { userId: user.id });
   
       const { message, voteStatus } = response.data;
       alert(message);
@@ -95,7 +95,7 @@ const MainPage = () => {
     }
 
     try {
-      await axios.patch(`http://localhost:3002/issues/${issueId}/checkbox`, {
+      await axios.patch(`https://community-issues-platform.onrender.com/issues/${issueId}/checkbox`, {
         userId: user.id,
         isChecked: newChecked,
       });
@@ -133,7 +133,7 @@ const MainPage = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:3002/issues', {
+      const response = await axios.post('https://community-issues-platform.onrender.com/issues', {
         title: newIssueTitle,
         description: newIssueDescription,
         userId: user.id,
