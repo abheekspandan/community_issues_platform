@@ -8,7 +8,7 @@ const IssuesList = () => {
   useEffect(() => {
     const fetchIssues = async () => {
       try {
-        const response = await axios.get('https://community-issues-platform-1.onrender.com/issues');
+        const response = await axios.get('https://community-issues-platform.onrender.com/issues');
         setIssues(response.data);
       } catch (error) {
         console.error('Error fetching issues:', error);
