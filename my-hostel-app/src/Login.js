@@ -17,7 +17,7 @@ const Login = () => {
     setError(''); // Reset error message
 
     try {
-      const response = await fetch('https://community-issues-platform-1.onrender.com/login', {
+      const response = await fetch('https://community-issues-platform.onrender.com/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
