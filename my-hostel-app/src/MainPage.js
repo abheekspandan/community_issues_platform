@@ -18,7 +18,7 @@ const MainPage = () => {
   useEffect(() => {
     const fetchIssues = async () => {
       try {
-        const response = await axios.get('http://localhost:3002/issues');
+        const response = await axios.get('https://community-issues-platform-1.onrender.com/issues');
         setIssues(response.data);
       } catch (error) {
         console.error('Error fetching issues:', error);
@@ -31,7 +31,7 @@ const MainPage = () => {
     const fetchVotedIssues = async () => {
       if (user && user.id) {
         try {
-          const response = await axios.get(`http://localhost:3002/votes/${user.id}`);
+          const response = await axios.get(`https://community-issues-platform-1.onrender.com/votes/${user.id}`);
           setVotedIssues(response.data.map(issue => issue.id));
         } catch (error) {
           console.error('Error fetching voted issues:', error);
@@ -50,7 +50,7 @@ const MainPage = () => {
     }
   
     try {
-      const response = await axios.post(`http://localhost:3002/vote/${issueId}`, { userId: user.id });
+      const response = await axios.post(`https://community-issues-platform-1.onrender.com/vote/${issueId}`, { userId: user.id });
   
       const { message, voteStatus } = response.data;
       alert(message);
