@@ -24,7 +24,7 @@ const AccountSettings = () => {
     useEffect(() => {
         const userId = user.id;
         console.log("Fetching user data for user ID:", userId);
-        axios.get(`https://community-issues-platform-1.onrender.com/api/user/${userId}`)
+        axios.get(`https://community-issues-platform.onrender.com/api/user/${userId}`)
             .then(response => {
                 console.log("User data response:", response.data); // Log the entire response
                 // Check if the data is nested
@@ -54,7 +54,7 @@ const AccountSettings = () => {
         e.preventDefault();
         const userId = user.id;
 
-        axios.put(`https://community-issues-platform-1.onrender.com/api/user/${userId}`, formData)
+        axios.put(`https://community-issues-platform.onrender.com/api/user/${userId}`, formData)
             .then(response => {
                 alert('Account updated successfully');
             })
@@ -66,7 +66,7 @@ const AccountSettings = () => {
         const userId = user.id;
 
         // Verify current password first
-        axios.post(`https://community-issues-platform-1.onrender.com/api/verify-password`, { userId, currentPassword })
+        axios.post(`https://community-issues-platform.onrender.com/api/verify-password`, { userId, currentPassword })
             .then(response => {
                 if (response.data.verified) {
                     console.log("Verified password:", response.data);
@@ -125,7 +125,7 @@ const AccountSettings = () => {
             return;
         }
     
-        axios.post('https://community-issues-platform-1.onrender.com/api/reset-password', { userId: user.id, newPassword })
+        axios.post('https://community-issues-platform.onrender.com/api/reset-password', { userId: user.id, newPassword })
             .then(response => {
                 alert('Password reset successfully');
                 setActiveForm('reset'); // Reset to the initial form
