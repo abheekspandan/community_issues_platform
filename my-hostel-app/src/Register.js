@@ -16,7 +16,7 @@ const Register = () => {
     const userData = { firstName, lastName, email, contactNumber, password };
   
     try {
-      const response = await fetch('https://community-issues-platform-1.onrender.com/register', {
+      const response = await fetch('https://community-issues-platform.onrender.com/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
