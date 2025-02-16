@@ -22,7 +22,7 @@ const NewIssueForm = ({ onIssuePublished }) => {
     setSuccess(''); // Reset the success message
 
     try {
-      const response = await axios.post('http://localhost:3002/issues', {
+      const response = await axios.post('https://community-issues-platform-1.onrender.com/issues', {
         title,
         description,
         status: 'published', // Set status to 'published' if directly publishing
