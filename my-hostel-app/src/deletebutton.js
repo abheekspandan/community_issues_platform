@@ -14,7 +14,7 @@ const DeleteAccount = () => {
 
         const userId = user.id;
         try {
-            const response = await axios.delete(`http://localhost:3002/api/delete-account/${userId}`);
+            const response = await axios.delete(`https://community-issues-platform-1.onrender.com/api/delete-account/${userId}`);
             console.log("Delete response:", response.data);
             alert("Account deleted successfully.");
             logout(); // Logout the user after account deletion
