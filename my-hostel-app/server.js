@@ -12,10 +12,11 @@ const twilio = require('twilio'); // Import the Twilio module
 require('dotenv').config();
 // Enable CORS
 app.use(cors({
-  origin: 'http://localhost:3000',
-  credentials: true
+  origin: ["http://localhost:3000", "https://community-issues-platform.vercel.app"], 
+  credentials: true,
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
-
 app.use(express.json());
 
 //database connection
