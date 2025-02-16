@@ -10,7 +10,7 @@ const RaisedIssues = () => {
 
   // Fetch issues raised by the current logged-in user
   useEffect(() => {
-    axios.get(`https://community-issues-platform-1.onrender.com/issues/${user.id}`)
+    axios.get(`https://community-issues-platform.onrender.com/issues/${user.id}`)
       .then((response) => {
         setIssues(response.data);
       })
@@ -26,7 +26,7 @@ const RaisedIssues = () => {
     if (confirmDelete) {
         const userId = user.id/* get userId from your state/context here */;
 
-        axios.delete(`https://community-issues-platform-1.onrender.com/issues/${issueId}`, { data: { userId } })
+        axios.delete(`https://community-issues-platform.onrender.com/issues/${issueId}`, { data: { userId } })
             .then(() => {
                 setIssues(issues.filter(issue => issue.id !== issueId));
                 alert('Issue deleted successfully!');
