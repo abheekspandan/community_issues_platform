@@ -13,7 +13,7 @@ const YourRaisedIssues = () => {
   useEffect(() => {
     const fetchIssues = async () => {
       try {
-        const response = await axios.get(`http://localhost:3002/issues/${user.id}`);
+        const response = await axios.get(`https://community-issues-platform.onrender.com/issues/${user.id}`);
         setIssues(response.data);
         setLoading(false);
       } catch (error) {
